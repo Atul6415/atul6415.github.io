@@ -3,44 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Atul Kumar | Portfolio</title>
 
+    <meta name="description"
+          content="Atul Kumar - BTech Computer Science Engineering student, programmer and technology enthusiast.">
+
     <style>
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             scroll-behavior: smooth;
-            font-family: Arial, sans-serif;
         }
 
         body {
-            background: #0f172a;
+            font-family: Arial, sans-serif;
+            background: #020617;
             color: white;
             line-height: 1.6;
         }
 
+        /* NAVBAR */
+
         header {
             position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
-            background: rgba(15, 23, 42, 0.95);
             padding: 18px 8%;
+            background: rgba(2, 6, 23, 0.92);
+            backdrop-filter: blur(10px);
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            border-bottom: 1px solid #334155;
+            border-bottom: 1px solid #1e293b;
         }
 
-        header h2 {
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
             color: #38bdf8;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 20px;
+            margin-left: 25px;
+            font-weight: 500;
             transition: 0.3s;
         }
 
@@ -48,226 +60,696 @@
             color: #38bdf8;
         }
 
-        section {
-            padding: 100px 8%;
-        }
+        /* HERO */
 
-        .home {
+        .hero {
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(135deg, #0f172a, #1e293b);
+            padding: 100px 8% 50px;
+
+            background:
+            radial-gradient(circle at top right, #0c4a6e, transparent 35%),
+            radial-gradient(circle at bottom left, #172554, transparent 35%),
+            #020617;
         }
 
-        .home h1 {
-            font-size: 55px;
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 60px;
             margin-bottom: 15px;
         }
 
-        .home h1 span {
+        .hero h1 span {
             color: #38bdf8;
         }
 
-        .home p {
-            font-size: 20px;
+        .hero h2 {
+            font-size: 28px;
             color: #cbd5e1;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
+        }
+
+        .typing {
+            color: #38bdf8;
+            font-weight: bold;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            color: #94a3b8;
+            font-size: 18px;
+        }
+
+        .buttons {
+            margin-top: 30px;
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 25px;
-            background: #38bdf8;
-            color: #0f172a;
-            text-decoration: none;
+            padding: 13px 25px;
+            margin: 8px;
             border-radius: 8px;
+            text-decoration: none;
             font-weight: bold;
             transition: 0.3s;
         }
 
-        .btn:hover {
-            background: #0ea5e9;
-            transform: scale(1.05);
+        .primary {
+            background: #38bdf8;
+            color: #020617;
         }
 
-        .title {
-            text-align: center;
+        .secondary {
+            border: 1px solid #38bdf8;
             color: #38bdf8;
-            font-size: 35px;
-            margin-bottom: 40px;
         }
 
-        .about {
-            max-width: 900px;
+        .btn:hover {
+            transform: translateY(-4px);
+        }
+
+        /* GENERAL */
+
+        section {
+            padding: 100px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 38px;
+            color: #38bdf8;
+            margin-bottom: 50px;
+        }
+
+        /* ABOUT */
+
+        .about-container {
+            max-width: 850px;
             margin: auto;
             text-align: center;
+        }
+
+        .about-container p {
             color: #cbd5e1;
             font-size: 18px;
         }
 
-        .skills-container,
-        .projects-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+        /* EDUCATION */
+
+        .education {
+            max-width: 800px;
+            margin: auto;
         }
 
-        .card {
-            background: #1e293b;
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid #334155;
+        .education-card {
+            background: #0f172a;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #1e293b;
+            margin-bottom: 20px;
             transition: 0.3s;
         }
 
-        .card:hover {
+        .education-card:hover {
+            border-color: #38bdf8;
+            transform: translateY(-5px);
+        }
+
+        .education-card h3 {
+            color: #38bdf8;
+            font-size: 23px;
+        }
+
+        .education-card p {
+            color: #94a3b8;
+        }
+
+        /* SKILLS */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .skill-card {
+            background: #0f172a;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid #1e293b;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
             transform: translateY(-8px);
             border-color: #38bdf8;
         }
 
-        .card h3 {
-            color: #38bdf8;
+        .skill-icon {
+            font-size: 40px;
             margin-bottom: 10px;
         }
 
-        .card p {
-            color: #cbd5e1;
+        .skill-card h3 {
+            color: #38bdf8;
         }
+
+        .skill-card p {
+            color: #94a3b8;
+            margin-top: 8px;
+        }
+
+        /* PROJECTS */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .project-card {
+            background: #0f172a;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #1e293b;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: #38bdf8;
+        }
+
+        .project-card h3 {
+            color: #38bdf8;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: #94a3b8;
+        }
+
+        .project-btn {
+            display: inline-block;
+            margin-top: 18px;
+            color: #38bdf8;
+            text-decoration: none;
+            border: 1px solid #38bdf8;
+            padding: 8px 15px;
+            border-radius: 6px;
+        }
+
+        /* CERTIFICATIONS */
+
+        .certifications {
+            max-width: 900px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .certificate {
+            background: #0f172a;
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid #1e293b;
+        }
+
+        .certificate h3 {
+            color: #38bdf8;
+        }
+
+        .certificate p {
+            color: #94a3b8;
+        }
+
+        /* CONTACT */
 
         .contact {
             text-align: center;
         }
 
-        .contact p {
-            margin: 10px;
+        .contact-box {
+            max-width: 650px;
+            margin: auto;
+            background: #0f172a;
+            padding: 35px;
+            border-radius: 15px;
+            border: 1px solid #1e293b;
+        }
+
+        .contact-box p {
+            margin: 15px;
             color: #cbd5e1;
         }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #020617;
-            color: #94a3b8;
+        .contact-box a {
+            color: #38bdf8;
+            text-decoration: none;
         }
 
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #01040c;
+            color: #64748b;
+            border-top: 1px solid #1e293b;
+        }
+
+        /* MOBILE */
+
         @media (max-width: 700px) {
+
             header {
+                padding: 15px 5%;
                 flex-direction: column;
                 gap: 10px;
             }
 
             nav a {
-                margin: 0 7px;
-                font-size: 14px;
+                margin: 0 6px;
+                font-size: 13px;
             }
 
-            .home h1 {
-                font-size: 40px;
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero h2 {
+                font-size: 21px;
+            }
+
+            section {
+                padding: 80px 5%;
+            }
+
+            .section-title {
+                font-size: 32px;
             }
         }
+
     </style>
 </head>
 
 <body>
 
-    <header>
-        <h2>Atul Kumar</h2>
+<!-- NAVBAR -->
 
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+<header>
 
-    <section class="home" id="home">
-        <div>
-            <h1>Hi, I'm <span>Atul Kumar</span></h1>
-            <p>BTech Computer Science Engineering Student</p>
-            <a href="#about" class="btn">Explore My Portfolio</a>
+    <div class="logo">Atul Kumar</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>Hi, I'm <span>Atul Kumar</span></h1>
+
+        <h2>
+            BTech Computer Science Engineering Student
+        </h2>
+
+        <p>
+            <span class="typing" id="typing"></span>
+        </p>
+
+        <p style="margin-top:15px;">
+            I love programming, building projects and learning
+            new technologies.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#projects" class="btn primary">
+                View My Projects
+            </a>
+
+            <a href="#contact" class="btn secondary">
+                Contact Me
+            </a>
+
         </div>
-    </section>
 
-    <section id="about">
-        <h2 class="title">About Me</h2>
+    </div>
 
-        <div class="about">
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about-container">
+
+        <p>
+            Hello! I'm Atul Kumar, a BTech Computer Science
+            Engineering student with an interest in programming,
+            software development and technology.
+        </p>
+
+        <br>
+
+        <p>
+            I am currently developing my programming skills in
+            Java, Python, HTML and CSS while working on practical
+            projects to improve my problem-solving abilities.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+    <h2 class="section-title">Education</h2>
+
+    <div class="education">
+
+        <div class="education-card">
+
+            <h3>BTech – Computer Science Engineering</h3>
+
             <p>
-                I am a Computer Science Engineering student interested in
-                programming, web development and new technologies.
-                I enjoy learning new skills and building practical projects.
+                Institute of Technical Education and Research
             </p>
-        </div>
-    </section>
 
-    <section id="skills">
-        <h2 class="title">My Skills</h2>
-
-        <div class="skills-container">
-
-            <div class="card">
-                <h3>Python</h3>
-                <p>Basic programming, functions, loops, lists and problem solving.</p>
-            </div>
-
-            <div class="card">
-                <h3>Java</h3>
-                <p>Object-oriented programming, arrays, methods and data structures.</p>
-            </div>
-
-            <div class="card">
-                <h3>HTML & CSS</h3>
-                <p>Creating responsive and modern web pages.</p>
-            </div>
-
-            <div class="card">
-                <h3>MS Excel</h3>
-                <p>Data handling, formulas and spreadsheet management.</p>
-            </div>
+            <p>
+                Currently pursuing
+            </p>
 
         </div>
-    </section>
 
-    <section id="projects">
-        <h2 class="title">My Projects</h2>
+        <div class="education-card">
 
-        <div class="projects-container">
+            <h3>Higher Secondary Education</h3>
 
-            <div class="card">
-                <h3>Java Calculator</h3>
-                <p>A calculator application created using Java programming.</p>
-            </div>
-
-            <div class="card">
-                <h3>Number Guessing Game</h3>
-                <p>A simple interactive guessing game developed using programming concepts.</p>
-            </div>
-
-            <div class="card">
-                <h3>Portfolio Website</h3>
-                <p>This personal portfolio website hosted using GitHub Pages.</p>
-            </div>
+            <p>
+                Completed Class 12
+            </p>
 
         </div>
-    </section>
 
-    <section id="contact">
-        <h2 class="title">Contact Me</h2>
+    </div>
 
-        <div class="contact">
-            <p>📧 Email: atulkrr2007@gmail.com</p>
-            <p>🐙 GitHub: github.com/Atul6415</p>
-            <p>📱 Phone: 8603970414</p>
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <h2 class="section-title">My Skills</h2>
+
+    <div class="skills-grid">
+
+        <div class="skill-card">
+            <div class="skill-icon">🐍</div>
+            <h3>Python</h3>
+            <p>Programming, functions, loops and problem solving.</p>
         </div>
-    </section>
 
-    <footer>
-        <p>© 2026 Atul Kumar. All Rights Reserved.</p>
-    </footer>
+        <div class="skill-card">
+            <div class="skill-icon">☕</div>
+            <h3>Java</h3>
+            <p>OOP, arrays, methods and data structures.</p>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">🌐</div>
+            <h3>HTML & CSS</h3>
+            <p>Building responsive and modern websites.</p>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">📊</div>
+            <h3>MS Excel</h3>
+            <p>Data handling, formulas and spreadsheets.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <h2 class="section-title">My Projects</h2>
+
+    <div class="projects-grid">
+
+        <div class="project-card">
+
+            <h3>Java Calculator</h3>
+
+            <p>
+                A calculator application developed using Java
+                programming concepts.
+            </p>
+
+            <a href="https://github.com/Atul6415"
+               class="project-btn"
+               target="_blank">
+                GitHub →
+            </a>
+
+        </div>
+
+
+        <div class="project-card">
+
+            <h3>Number Guessing Game</h3>
+
+            <p>
+                An interactive guessing game created to practice
+                programming logic and conditional statements.
+            </p>
+
+            <a href="https://github.com/Atul6415"
+               class="project-btn"
+               target="_blank">
+                GitHub →
+            </a>
+
+        </div>
+
+
+        <div class="project-card">
+
+            <h3>Personal Portfolio</h3>
+
+            <p>
+                A responsive personal portfolio website created
+                using HTML and CSS and hosted with GitHub Pages.
+            </p>
+
+            <a href="https://github.com/Atul6415"
+               class="project-btn"
+               target="_blank">
+                GitHub →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CERTIFICATIONS -->
+
+<section>
+
+    <h2 class="section-title">Certifications & Learning</h2>
+
+    <div class="certifications">
+
+        <div class="certificate">
+
+            <h3>Programming</h3>
+
+            <p>
+                Learning Java and Python programming with
+                practical problem solving.
+            </p>
+
+        </div>
+
+        <div class="certificate">
+
+            <h3>Web Development</h3>
+
+            <p>
+                Learning HTML, CSS and modern web development.
+            </p>
+
+        </div>
+
+        <div class="certificate">
+
+            <h3>Computer Science</h3>
+
+            <p>
+                Developing knowledge of Data Structures,
+                Algorithms and Computer Science fundamentals.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <h2 class="section-title">Contact Me</h2>
+
+    <div class="contact">
+
+        <div class="contact-box">
+
+            <p>
+                📧
+                <a href="mailto:atulkr2007@gmail.com">
+                    atulkr2007@gmail.com
+                </a>
+            </p>
+
+            <p>
+                🐙
+                <a href="https://github.com/Atul6415"
+                   target="_blank">
+                    GitHub Profile
+                </a>
+            </p>
+
+            <p>
+                💼
+                <a href="#" onclick="return false;">
+                    LinkedIn — Add your profile
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 Atul Kumar | Built with HTML & CSS
+    </p>
+
+</footer>
+
+
+<!-- TYPING EFFECT -->
+
+<script>
+
+    const texts = [
+        "Java Programmer",
+        "Python Learner",
+        "Web Development Enthusiast",
+        "Future Software Developer"
+    ];
+
+    let textIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    const typing = document.getElementById("typing");
+
+    function typeEffect() {
+
+        const currentText = texts[textIndex];
+
+        if (!deleting) {
+
+            typing.textContent =
+                currentText.substring(0, charIndex + 1);
+
+            charIndex++;
+
+            if (charIndex === currentText.length) {
+
+                deleting = true;
+
+                setTimeout(typeEffect, 1500);
+
+                return;
+            }
+
+        } else {
+
+            typing.textContent =
+                currentText.substring(0, charIndex - 1);
+
+            charIndex--;
+
+            if (charIndex === 0) {
+
+                deleting = false;
+
+                textIndex++;
+
+                if (textIndex === texts.length) {
+                    textIndex = 0;
+                }
+
+            }
+
+        }
+
+        setTimeout(typeEffect, deleting ? 50 : 100);
+    }
+
+    typeEffect();
+
+</script>
 
 </body>
 </html>
